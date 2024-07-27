@@ -50,8 +50,8 @@ Update the paths in the code to point to the correct dataset directory
 I used the ResNet18 model, a widely used convolutional neural network architecture. The final layer of the pre-trained ResNet18 model is modified to match the number of classes in the ImageNet10 dataset.
 
 ## Adversarial Attacks
-PGD (Projected Gradient Descent) is used to generate adversarial examples and evaluate the model's robustness. The parameters for PGD are:
-- 
+This project includes the implementation of Projected Gradient Descent (PGD) attacks to test the robustness of the ResNet18 model. PGD is a widely used adversarial attack method that iteratively perturbs the input images to maximize the model's prediction error.
+
 
 ## Results
 The model's accuracy under PGD attack is reported to assess its robustness. Since ImageNet10 has a small amount of data, the ResNet18 model that was pre-trained was only able to obtain a 50% accuracy. After applying PGD attacks, the model had an accuracy of 0%. The two other variations were able to achieve a maximum of 40% accuracy. One model was made by fine-tuning all layers and the other had frozen layers except for the top one. However, since the dataset was so small, it was unable to achieve good accuracy. 
@@ -69,4 +69,4 @@ The model's accuracy under PGD attack is reported to assess its robustness. Sinc
 
 ## Acknowledgements: 
 - TorchAttacks: The adversarial attack library used in this project. More Details can be found on their github page
-- ImageNet10: The dataset used for training and evaluation. The datasertr is a subset of ImageNet dataset. 
+- ImageNet10: The dataset used for training and evaluation. The dataset is a subset of ImageNet dataset. 
